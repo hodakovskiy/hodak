@@ -1,0 +1,13 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        
+    Hodak\SergeyBlog\Security\Controller\:
+        resource: '../../src/Security/Controller'
+        public: true
+        
+
+    # Hodak\SergeyBlog\Security\ServiceName: ~

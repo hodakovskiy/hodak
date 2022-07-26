@@ -1,0 +1,32 @@
+#symfony:
+#    is:
+#        # id is symfony.is.great
+#        great: Symfony is great
+#        # id is symfony.is.amazing
+#        amazing: Symfony is amazing
+#    has:
+#        # id is symfony.has.bundles
+#        bundles: Symfony has bundles
+navbar:
+  home: Home
+  login: login
+  profile: Profile
+  logout: Logout
+  registration: Registration
+  
+registr:
+   head_registration: New user registration
+  
+registr_form:
+    email: Email
+    email_use:  Email "{{value}}" is already in use.
+    password: Password
+    password_repeat: Repeat Password
+    registration: Registration
+    password_match: The password fields must match.
+    password_field: password-field
+   
+base:
+    say_hello: 'Hello {name}!'
+    say_hello_user: Hello User!
+    say_hello_guest: Hello Guest!

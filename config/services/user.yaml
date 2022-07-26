@@ -1,0 +1,36 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        
+    Hodak\SergeyBlog\User\Model\:
+        resource: '../../src/User/Model'
+        public: true
+
+    Hodak\SergeyBlog\User\Controller\:
+        resource: '../../src/User/Controller'
+        public: true
+        
+    Hodak\SergeyBlog\User\DataFixtures\:
+        resource: '../../src/User/DataFixtures'
+        public: true   
+        
+    Hodak\SergeyBlog\User\Dto\:
+        resource: '../../src/User/Dto'
+        public: true          
+        
+    Hodak\SergeyBlog\User\Mapper\:
+        resource: '../../src/User/Mapper'
+        public: true      
+   
+    Hodak\SergeyBlog\User\Validator\:
+        resource: '../../src/User/Validator'
+        public: true       
+          
+    Hodak\SergeyBlog\Security\: 
+        resource: '../../src/Security'            
+ 
+
+    # Hodak\SergeyBlog\User\ServiceName: ~

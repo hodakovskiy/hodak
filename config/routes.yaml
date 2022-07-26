@@ -1,0 +1,5 @@
+homepage:
+    path: /
+    controller: Hodak\SergeyBlog\Core\Controller\DefaultController::index
+    defaults:
+        template: default/homepage.html.twig

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Default !{% endblock %}
+
+{% block body %}
+
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div>
+      <h1> {{'base.say_hello_user'|trans }} </h1>
+    </div>
+  {% else %}
+    <div>
+      <h1> {{'base.say_hello_guest'|trans }}</h1>
+    </div>      
+  {% endif %}  
+
+
+{% endblock %}

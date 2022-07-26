@@ -1,0 +1,3 @@
+controllers:
+    resource: ../../src/Post/Controller/
+    type: annotation

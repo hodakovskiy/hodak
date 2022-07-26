@@ -1,0 +1,25 @@
+
+navbar:
+  home: Главная
+  login: Логин
+  profile: Профиль
+  logout: Выйти
+  registration: Регистрация
+  
+registr:
+    head_registration: Регистрация нового пользователя
+  
+registr_form:
+    email: Email
+    email_use: Электронная почта уже используется..
+    password: Пароль
+    password_repeat: Повторите пароль
+    registration: Регистрация
+    password_match: Поля пароля должны совпадать.
+    password_field: поле пароля
+base:
+    say_hello: 'Привет {name}!'
+    say_hello_user: Добро пожаловать пользователь!
+    say_hello_guest: Здравствуй гость!
+    
+author.name.not_blank: Please enter an author name.

@@ -1,0 +1,20 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Hodak\SergeyBlog\Core\Controller\:
+        resource: '../../src/Core/Controller'
+        public: true
+        
+    Hodak\SergeyBlog\Core\Entity\:
+        resource: '../../src/Core/Entity'
+        public: true  
+        
+    Hodak\SergeyBlog\Core\Repository\:
+        resource: '../../src/Core/Repository'
+        public: true    
+
+    # Hodak\SergeyBlog\Core\ServiceName: ~

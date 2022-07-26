@@ -1,0 +1,13 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        
+
+    Hodak\SergeyBlog\Post\Controller\:
+        resource: '../../src/Post/Controller'
+        public: true
+        
+

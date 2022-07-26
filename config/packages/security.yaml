@@ -1,0 +1,61 @@
+security:
+    password_hashers:
+          Hodak\SergeyBlog\Core\Entity\User:
+              algorithm: 'auto'
+    enable_authenticator_manager: true
+    providers:
+        database_users:
+            entity: { class: Hodak\SergeyBlog\Core\Entity\User, property: email }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            # this firewall applies to all URLs
+            pattern: ^/
+
+            lazy: true
+
+            # The user provider to use.
+            provider: database_users
+
+            # This allows the user to login by submitting a username and password
+            # Reference: https://symfony.com/doc/current/security/form_login_setup.html
+            form_login:
+                # The route name that the login form submits to
+                check_path: sergey_blog_user_login
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: sergey_blog_user_login
+                # Secure the login form against CSRF
+                # Reference: https://symfony.com/doc/current/security/csrf.html
+                # enable_csrf: true
+                # The page users are redirect to when there is no previous page stored in the
+                # session (for example when the users access directly to the login page).
+                default_target_path: homepage
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: sergey_blog_user_logout
+                # The name of the route to redirect to after logging out
+                target: homepage
+
+            # needed because in tests we redefine the 'main' firewall to use
+            # HTTP Basic instead of the login form, so this firewall has
+            # multiple authenticators
+            # See https://symfony.com/doc/current/security/experimental_authenticators.html#configuring-the-authentication-entry-point
+            # entry_point: 'sergey_blog_user_login'
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        # this is a catch-all for the admin area
+        # additional security lives in the controllers
+#        - { path: '^/(%app_locales%)/admin', roles: ROLE_ADMIN }
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/registration, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
+
+#    role_hierarchy:
+#        ROLE_ADMIN: ROLE_USER
+

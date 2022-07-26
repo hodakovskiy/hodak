@@ -1,0 +1,3 @@
+controllers:
+    resource: ../../src/Security/Controller/
+    type: annotation
